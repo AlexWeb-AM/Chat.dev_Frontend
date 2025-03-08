@@ -24,7 +24,10 @@ export const LoginForm = () => {
       const response = await dispatch(loginUser({ email, password })).unwrap();
       toast.success("Login successful");
       localStorage.setItem("userEmail", email);
+      localStorage.setItem("name",response.user.name)
       localStorage.setItem("routeId",response.user.routeId)
+      localStorage.setItem("username",response.user.username)
+      localStorage.setItem("friends",response.user.friends.toString())
       navigate(`/user/${response.user.routeId}/`);
     } catch (err: any) {
       toast.error(err?.message || "Login failed");

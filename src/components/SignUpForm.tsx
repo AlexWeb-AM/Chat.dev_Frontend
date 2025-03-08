@@ -63,8 +63,6 @@ export const SignUpForm = () => {
             setPassword('');
             setConfirmPassword('');
 
-            localStorage.setItem('emailForVerification', email);
-
             navigate('/login');
         } catch (error: any) {
             if (error?.message) {

@@ -8,6 +8,8 @@ interface User {
     name: string;
     email: string;
     routeId: string;
+    username:string;
+    friends: string[];
 }
 
 interface RegisterResponse {
